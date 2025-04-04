@@ -4,5 +4,29 @@ services:
   frontend:
     build:
       context: ./services/frontend
+      dockerfile: Dockerfile
     ports:
       - "3000:80"
+    depends_on:
+      - auth
+    restart: unless-stopped
+    env_file:
+      - ./services/frontend/.env
+    networks:
+      - app-network
+
+  auth:
+    build:
+      context: ./services/auth
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    env_file:
+      - ./services/auth/.env
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

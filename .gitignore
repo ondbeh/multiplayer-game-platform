@@ -398,3 +398,18 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+services/*/.env
+services/*/.env.local
+services/*/.env.production
+services/*/.env.development
+
+# But include example files
+!.env.example
+!services/*/.env.example
