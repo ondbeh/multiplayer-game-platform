@@ -1,6 +1,9 @@
+/* App-specific styles that build on base styles */
 .App {
   text-align: center;
 }
+
+/* Any additional app-level styles */
 
 .container {
   max-width: 1200px;
