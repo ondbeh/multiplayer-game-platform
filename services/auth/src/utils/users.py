@@ -1,9 +1,9 @@
 from typing import Optional, List
 from src.models import User, UserCreate, UserWithPassword
+from src.utils.password import hash_password, check_password
 
 users = {}
 
-# Add an admin user for testing purposes
 admin_user = UserWithPassword(
     id=1,
     username="admin",
@@ -11,7 +11,7 @@ admin_user = UserWithPassword(
     email="admin@admin.ad",
     is_active=True,
     is_superuser=True,
-    hashed_password="hashed_admin_password",  # Simulate hashing   
+    hashed_password=hash_password("awsaws"),
 )
 users[admin_user.username] = admin_user
 
@@ -23,7 +23,7 @@ def add_user(user: UserCreate) -> User:
         email=user.email,
         is_active=True,
         is_superuser=False,
-        hashed_password="hashed_" + user.password,  # Simulate hashing
+        hashed_password=hash_password(user.password),
     )
     users[user.username] = db_user
     return User(
@@ -34,6 +34,19 @@ def add_user(user: UserCreate) -> User:
         is_active=db_user.is_active,
         is_superuser=db_user.is_superuser,
     )
+    
+def authenticate_user(username: str, password: str) -> Optional[User]:
+    user = users.get(username)
+    if user and check_password(password, user.hashed_password):
+        return User(
+            id=user.id,
+            username=user.username,
+            full_name=user.full_name,
+            email=user.email,
+            is_active=user.is_active,
+            is_superuser=user.is_superuser,
+        )
+    return None
     
 def get_user(username: str) -> Optional[User]:
     user = users.get(username)
@@ -79,3 +92,4 @@ def delete_user(username: str) -> bool:
         del users[username]
         return True
     return False
+

@@ -23,8 +23,8 @@ const SignUp: React.FC = () => {
             return;
         }
         try {
-            // In a real app, you would connect to your auth service API
-            const response = await fetch(`${process.env.REACT_APP_AUTH_URL}/User`, {
+            const authUrl = '/api';
+            const response = await fetch(`${authUrl}/User`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

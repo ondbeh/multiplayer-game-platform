@@ -18,15 +18,8 @@ FROM nginx:stable-alpine
 # Copy built files from 'build' stage to nginx
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Create a default nginx config that works with React Router
-RUN echo 'server { \
-    listen 80; \
-    root /usr/share/nginx/html; \
-    index index.html; \
-    location / { \
-        try_files $uri $uri/ /index.html; \
-    } \
-}' > /etc/nginx/conf.d/default.conf
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port
 EXPOSE 80

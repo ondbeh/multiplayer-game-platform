@@ -16,3 +16,9 @@ class UserCreate(BaseModel):
     full_name: str = Field(..., description="The full name of the user")
     email: EmailStr = Field(..., description="The email of the user")
     password: str = Field(..., description="The password of the user")
+    
+class Token(BaseModel):
+    access_token: str = Field(..., description="The access token")
+    refresh_token: str = Field(..., description="The refresh token")
+    token_type: str = Field(..., description="The type of the token")
+    
