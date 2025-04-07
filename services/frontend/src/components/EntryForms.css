@@ -21,10 +21,35 @@
   box-shadow: var(--shadow-md);
 }
 
-.button-group {
+/* Horizontal form layout */
+.horizontal-form .form-group {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.horizontal-form label {
+  flex: 0 0 30%; /* Fixed width for labels */
+  text-align: right;
+  margin-bottom: 0; /* Override the default margin */
+}
+
+.horizontal-form input {
+  flex: 1; /* Takes the remaining space */
+}
+
+/* Adjust button container alignment for horizontal forms */
+.horizontal-form .button-group {
+  margin-left: 30%; /* Align with inputs */
+  padding-left: var(--spacing-md);
+  justify-content: flex-start;
+  margin-top: var(--spacing-md);
+}
+
+/* Added for the signup/login link at the bottom */
+.horizontal-form .form-group.text-center {
+  justify-content: center;
   margin-top: var(--spacing-lg);
 }
 

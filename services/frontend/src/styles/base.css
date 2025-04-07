@@ -27,18 +27,21 @@ code {
 }
 
 /* Button styles */
-button {
+button, .primary-button, .secondary-button {
   cursor: pointer;
   border: none;
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm);
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-md);
   transition: var(--transition-medium);
+  display: inline-block;
+  text-align: center;
 }
 
 .primary-button {
   background-color: var(--color-primary);
   color: var(--color-white);
+  text-decoration: none;
 }
 
 .primary-button:hover {
@@ -53,6 +56,14 @@ button {
 
 .secondary-button:hover {
   background-color: var(--color-secondary-shadow);
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 /* Form styles */

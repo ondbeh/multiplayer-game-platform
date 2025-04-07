@@ -16,15 +16,13 @@ const LandingPage: React.FC = () => {
                 <section className="cta">
                     <h2>Ready to Play?</h2>
                     <p>Join thousands of players already on the platform</p>
-                    <div className="button-group">
-                        <Link to="/login">
-                            <button className="primary-button">Log In</button>
-                        </Link>
-                        <Link to="/signup">
-                            <button className="secondary-button">Sign Up</button>
-                        </Link>
+                    <div className="button-container">
+                        <div className="button-group">
+                            <Link to="/login" className="primary-button">Log In</Link>
+                            <Link to="/signup" className="primary-button">Sign Up</Link>
+                        </div>
+                        <button className="secondary-button">Learn More</button>
                     </div>
-                    <button className="secondary-button">Learn More</button>
                 </section>
             </main>
 

@@ -71,10 +71,27 @@ header p {
   margin-bottom: var(--spacing-lg);
 }
 
-.button-group {
+.cta .button-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   gap: var(--spacing-md);
+  max-width: 320px; /* Control the overall width */
+  margin: 0 auto;
+}
+
+.cta .button-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cta .button-group .primary-button {
+  flex: 1;
+}
+
+.cta .secondary-button {
+  width: 100%;
+  margin-top: var(--spacing-xs);
 }
 
 footer {

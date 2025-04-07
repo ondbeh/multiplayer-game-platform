@@ -1,13 +1,13 @@
 :root {
   /* Colors */
-  --color-primary: #3498db;
-  --color-primary-dark: #2980b9;
-  --color-secondary: #2c3e50;
-  --color-light-bg: #ecf0f1;
-  --color-white: #ffffff;
-  --color-text: #333333;
-  --color-error: #c62828;
-  --color-success: #2ecc71;
+  --color-primary: rgba(52, 152, 219, 1);
+  --color-primary-dark: rgba(41, 128, 185, 1);
+  --color-secondary: rgba(44, 62, 80, 1);
+  --color-light-bg: rgba(236, 240, 241, 1);
+  --color-white: rgba(255, 255, 255, 1);
+  --color-text: rgba(51, 51, 51, 1);
+  --color-error: rgba(198, 40, 40, 1);
+  --color-success: rgba(46, 204, 113, 1);
   --color-secondary-shadow: rgba(44, 62, 80, 0.1);
 
   /* Typography */
@@ -31,10 +31,10 @@
   --border-radius-md: 8px;
 
   /* Shadows */
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-  --shadow-box: 0 0 0 2px var(var(--color-secondary-shadow))
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-box: 0 0 0 2px var(--color-secondary-shadow);
 
   /* Transitions */
   --transition-fast: 0.2s ease;
