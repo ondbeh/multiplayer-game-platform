@@ -1,5 +1,8 @@
 from pydantic import BaseModel, EmailStr, Field
 
+class TokenData(BaseModel):
+    username: str = Field(..., description="Username extracted from the token")
+
 class User(BaseModel):
     id: int = Field(..., description="The ID of the user")
     username: str = Field(..., description="The username of the user")
@@ -21,4 +24,3 @@ class Token(BaseModel):
     access_token: str = Field(..., description="The access token")
     refresh_token: str = Field(..., description="The refresh token")
     token_type: str = Field(..., description="The type of the token")
-    
